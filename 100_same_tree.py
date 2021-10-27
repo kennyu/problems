@@ -6,7 +6,7 @@ class Solution:
         arr = [p,q]
         while len(arr) > 0:
             tree_node_p, tree_node_q = arr.pop(), arr.pop()
-            if tree_node_p == None or tree_node_q == None:
+            if tree_node_p is None or tree_node_q is None:
                 if tree_node_p != tree_node_q:
                     return False
                 continue
@@ -17,3 +17,11 @@ class Solution:
             arr.append(tree_node_p.right)
             arr.append(tree_node_q.right)
         return True
+
+s = Solution()
+assert s.isSameTree(TreeNode(1), TreeNode(1)) == True
+
+t1 = TreeNode.fromList([1,2,3,4,5,6,7])
+t2 = TreeNode.fromList([1,2,None,4,5,None,None,6,7])
+
+assert s.isSameTree(t1, t2) == False

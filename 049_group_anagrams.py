@@ -16,4 +16,4 @@ class Solution:
 l1 = ["eat","tea","tan","ate","nat","bat"]
 
 s = Solution()
-print(s.groupAnagrams(l1))
+assert s.groupAnagrams(l1) == [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]

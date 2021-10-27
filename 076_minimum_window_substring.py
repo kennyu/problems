@@ -77,7 +77,6 @@ class Solution:
 
 s = Solution()
 
-print(s.minWindow("ADOBECODEBANC", "ABC"))
 assert s.minWindow("ADOBECODEBANC", "ABC") == "BANC"
 
 #The current window is s[i:j] and the result window is s[I:J].

@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import List, Optional
 from helper import ListNode
 
 class Solution:
@@ -17,21 +17,13 @@ class Solution:
         head.next = None
         return curr
 
-    def createLinkedList(self, arr):
-        if len(arr) < 1:
-            return None
-        curr = ListNode(arr[0])
-        head = curr
-        for elem in arr[1:]:
-            next = ListNode(elem)
-            curr.next = next
-            curr = next
-        return head
+s = Solution()
 
 # Test Cases
-l1 = [1,2,3,4,5]
-
-s = Solution()
-print(ListNode.toList(s.createLinkedList(l1)))
-h = s.reverseList(s.createLinkedList(l1))
-print(ListNode.toList(h))
+assert s.reverseList(None) is None
+t1 = ListNode(1)
+assert s.reverseList(t1).listify() == [1]
+t2 = ListNode.fromList([1,2,3,4,5])
+assert s.reverseList(t2).listify() == [5,4,3,2,1]
+t3 = ListNode.fromList([5,4,3,2,1])
+assert s.reverseList(t3).listify() == [1,2,3,4,5]

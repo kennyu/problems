@@ -35,5 +35,5 @@ lst = [1 for i in range(n * 2)]
 for i in range(n*2):
     rotated = lst[:]
     rotated[i] = 0
-    print(rotated)
+    # print(rotated)
     assert s.findMin(rotated) == 0

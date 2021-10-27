@@ -20,9 +20,9 @@ l6 = [2, -3, 2, -4, 0, -3, 20]
 l7 = [-2,-3,-4,-5,-6,-7,-8]
 
 s = Solution()
-assert(s.maxProduct(l1) == 6)
-assert(s.maxProduct(l2) == 0)
-assert(s.maxProduct(l3) == 96)
-assert(s.maxProduct(l4) == 6)
-assert(s.maxProduct(l6) == 48)
-assert(s.maxProduct(l7) == 20160)
+assert s.maxProduct(l1) == 6
+assert s.maxProduct(l2) == 0
+assert s.maxProduct(l3) == 96
+assert s.maxProduct(l4) == 6
+assert s.maxProduct(l6) == 48
+assert s.maxProduct(l7) == 20160

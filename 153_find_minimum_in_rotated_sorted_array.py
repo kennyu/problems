@@ -26,8 +26,6 @@ l2 = [4,5,6,7,0,1,2]
 l3 = [11,13,15,17]
 
 s = Solution()
-assert(s.findMin(l1) == 1)
-assert(s.findMin(l2) == 0)
-assert(s.findMin(l3) == 11)
-
-
+assert s.findMin(l1) == 1
+assert s.findMin(l2) == 0
+assert s.findMin(l3) == 11
