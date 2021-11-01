@@ -21,3 +21,11 @@ class Solution:
 s = Solution()
 t1 = TreeNode(1)
 assert s.kthSmallest(t1,1) == 1
+t2 = TreeNode.fromList([4,2,6,1,3,5,7])
+assert s.kthSmallest(t2, 1) == 1
+assert s.kthSmallest(t2, 2) == 2
+assert s.kthSmallest(t2, 3) == 3
+assert s.kthSmallest(t2, 4) == 4
+assert s.kthSmallest(t2, 5) == 5
+assert s.kthSmallest(t2, 6) == 6
+assert s.kthSmallest(t2, 7) == 7
