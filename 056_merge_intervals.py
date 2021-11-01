@@ -1,7 +1,7 @@
 from typing import List
 
 class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    def merge_v1(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort()
         return_arr = [intervals[0]]
         for i,j in intervals[1:]:
@@ -11,7 +11,20 @@ class Solution:
             else:
                 return_arr.append([i,j])
         return return_arr
-            
+
+    def merge(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key = lambda x: x[1])
+        curr = intervals[-1]
+        for i in range(len(intervals)-1,0,-1):
+            prev = intervals[i-1]
+            if prev[1] >= curr[0]:
+                prev[1] = curr[1]
+                prev[0] = min(curr[0], prev[0])
+                intervals.pop(i)
+            curr = prev
+        # print("intervals ", intervals)
+        return intervals
+
 
 # Test Cases
 l1 = [[1,3],[2,6],[8,10],[15,18]]
@@ -22,4 +35,9 @@ l5 = [[1,2],[3,4],[5,6],[7,8],[9,10]] # stays the same
 l6 = [[1,4], [0,4]]
 
 s = Solution()
-print(s.merge(l6))
+assert s.merge(l1) == [[1,6],[8,10],[15,18]]
+assert s.merge(l2) == [[1,10]]
+assert s.merge(l3) == [[1,10]]
+assert s.merge(l4) == [[1,10]]
+assert s.merge(l5) == [[1,2],[3,4],[5,6],[7,8],[9,10]]
+assert s.merge(l6) == [[0,4]]
