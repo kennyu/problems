@@ -39,7 +39,7 @@ class TreeNode:
                 tree[parent].right = node
         return root
 
-    def printAll(self, name=""):
+    def __repr__(self, name=""):
         return TreeNode.print(self, name=name)
 
     @staticmethod
